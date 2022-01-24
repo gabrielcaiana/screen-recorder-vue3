@@ -14,6 +14,14 @@
           <button class="app__actions__button" disabled>stop recording</button>
         </div>
       </div>
+
+      <div v-if="false" class="app__content">
+        <h2 class="app__subtitle">Download your video</h2>
+        <video src="" autoplay class="app__recorded-video"></video>
+        <div class="app__actions">
+          <button class="app__actions__button">download video</button>
+        </div>
+      </div>
     </main>
   </div>
 </template>
@@ -28,7 +36,7 @@ export default {
 .app {
   $this: &;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background: #1a1a40;
   color: #e0dfdf;
 
@@ -45,15 +53,18 @@ export default {
     overflow: hidden;
     padding: 2rem;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     #{$this}__content {
       width: 60vw;
+      margin-bottom: 4rem;
       &__subtitle {
-        text-transform: capitalize;
+        text-transform: uppercase;
       }
 
-      #{$this}__video-feedback {
+      #{$this}__video-feedback,
+      #{$this}__recorded-video {
         background: #000000;
         width: 100%;
         height: 30rem;
@@ -72,7 +83,7 @@ export default {
           padding: 1rem 2rem;
           font-weight: 700;
           transition: all 300ms;
-          background: #FA58B6;
+          background: #fa58b6;
           border: none;
           border-radius: 8px;
           color: #ffffff;

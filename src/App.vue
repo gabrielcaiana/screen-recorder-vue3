@@ -220,6 +220,8 @@ export default {
           border-radius: 8px;
           color: #ffffff;
           cursor: pointer;
+          text-align: center;
+          text-decoration: none;
 
           &:hover {
             opacity: 0.8;
